@@ -32,7 +32,7 @@
 		<li ng-repeat="(key, message) in data">
 			<h4>{{ message.nom }} - {{ message.prenom }}</h4>
 			<i>{{ message.email }}</p>
-			<a ng-click="removeMess(key)"><i class="fa fa-times"></i></a>
+			<a ng-click="removeMess(message)"><i class="fa fa-times"></i></a>
 		</li>
 	</ul>
 

@@ -23,15 +23,24 @@ phonecatApp.factory('UserService', function ($resource) {
 // Define the `PhoneListController` controller on the `phonecatApp` module
 phonecatApp.controller('PhoneListController', function PhoneListController($scope, UserService, $firebaseArray) {
 	var ref = firebase.database().ref();
- 	$scope.data = $firebaseArray(ref);
+	var query = ref.orderByChild("prenom").limitToLast(3);
+
+	$scope.data = $firebaseArray(query);
+
+
+	//https://www.firebase.com/docs/web/libraries/angular/guide/synchronized-arrays.html
+
+
 
 	$scope.remove = function(phone){
 		$scope.phones.splice($scope.phones.indexOf(phone),1);
 	};
 
-	$scope.removeMess = function(key){
-		delete $scope.data[key];
-		$scope.data.$save();
+	$scope.removeMess = function(message){
+		$scope.data.$remove(message);
+		var item = $scope.data.$getRecord(1);
+		item.prenom = "Sissoko";
+		$scope.data.$save(item)
 	};
 
 	$scope.add = function(){
