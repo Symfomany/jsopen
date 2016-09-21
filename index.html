@@ -19,12 +19,52 @@
   </head>
   <body>
 
+
+    <div ng-app="app">
+
+      <div ng-controller="TchatCtrl">
+        <ul>
+          <li ng-repeat="user in users">
+            <span>{{user.name}}</span>
+            <span>{{user.email}}</span>
+            <span>{{user.username}}</span>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-		<script src="main.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+		<!-- <script src="main.js" charset="utf-8"></script> -->
+		<!-- <script src="dist/es6.js" charset="utf-8"></script> -->
+
+    <script type="text/javascript">
+    // Define the `phonecatApp` module
+      var phonecatApp = angular.module('app', []);
+
+      // Define the `PhoneListController` controller on the `phonecatApp` module
+      phonecatApp.controller('TchatCtrl', function TchatCtrl($scope,  $http, $interval) {
+
+
+
+      $interval(function () {
+          $http.get("https://jsonplaceholder.typicode.com/users").then(function (response) {
+              $scope.users = response.data;
+          });
+      }, 2000);
+
+
+
+
+      });
+    </script>
+
 
   </body>
 </html>

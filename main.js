@@ -1,6 +1,66 @@
-"strict mode"
+"use strict";
 
 
+
+
+// "use strict";
+// variableMalDéclarée = 17; // lève une ReferenceError
+// var o = { p: 1, p: 2 }; // !!! erreur de syntaxe
+// console.log(o);
+
+
+//
+// console.log('ok');
+// console.log(typeof  4.5)
+// console.log(typeof  null)
+// console.log(8 * null)
+// console.log(false  == 0)
+//
+//
+// function strict(){
+//   // Syntaxe en mode strict au niveau de la fonction
+//   'use strict';
+//   function nested() { return "Ho que oui, je le suis !"; }
+//   return "Allô ! Je suis une fonction en mode strict ! " + nested();
+// }
+// function notStrict() { return "Je ne suis pas strict."; }
+
+// var  theNumber = Number(prompt ("Pick a number", ""));
+// alert ("Your  number  is the  square  root of " +theNumber * theNumber);
+
+// function  fac(n){
+//   if (n == 0)
+//   return  1;
+//   else
+//   return  fac(n - 1) * n;
+// }
+// console.log(fac (100));
+
+//array and object undefiend
+// var empty = [];
+// var numbers = ['zero', 'one', 'two', 'three', 'four','five', 'six', 'seven', 'eight', 'nine'];
+// // console.log(mav);
+// console.log(empty[1]);
+ // undefinednumbers[1]        // 'one'empty.length      // 0numbers.length    // 10
+// var numbers_object = {
+// 	'0': 'zero',  '1': 'one',
+// 	'2': 'two',   '3': 'three',
+//   '4': 'four',  '5': 'five',
+// 	'6': 'six',   '7': 'seven',
+// 	'8': 'eight', '9': 'nine'
+// 	};
+// console.log(numbers_object.ok);
+
+// var myMammal = {
+// 	name : 'Herb the Mammal',
+// 	get_name : function ( ) {
+// 		return this.name;
+// 	},
+// 	says : function ( ) {
+// 		return this.saying || '';
+// 	}
+// };
+// console.log(myMammal.get_name());
 
 // var add = function (a, b) {
 // 	    if (typeof a !== 'number' || typeof b !== 'number') {

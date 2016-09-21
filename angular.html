@@ -1,0 +1,53 @@
+<html ng-app="phonecatApp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js" charset="utf-8"></script>
+
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCXcMhtZo_tHRqbxos8JQ8GJ9FRIRT1DBc",
+	    authDomain: "emails-f1fa2.firebaseapp.com",
+	    databaseURL: "https://emails-f1fa2.firebaseio.com",
+	    storageBucket: "emails-f1fa2.appspot.com",
+	    // messagingSenderId: "911058098725"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js" charset="utf-8"></script>
+  <script src="angular1.js"></script>
+</head>
+<body ng-controller="PhoneListController">
+
+
+	<ul>
+		<li ng-repeat="(key, message) in data">
+			<h4>{{ message.nom }} - {{ message.prenom }}</h4>
+			<i>{{ message.email }}</p>
+			<a ng-click="removeMess(key)"><i class="fa fa-times"></i></a>
+		</li>
+	</ul>
+
+	<button type="button" class="btn btn-primary" ng-click='add()' name="button">Add</button>
+
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <span>{{phone.username}}</span>
+      <span>{{phone.email}}</span>
+      <!-- <h3>{{ phone.created|ago  }}</h3> -->
+      <!-- <p>{{phone.snippet}}</p> -->
+			<a ng-click="remove(phone)"><i class="fa fa-times"></i></a>
+    </li>
+  </ul>
+
+</body>
+</html>
