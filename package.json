@@ -2,7 +2,11 @@
   "devDependencies": {
     "babel-cli": "^6.14.0"
   },
-	"scripts": {
+  "scripts": {
     "build": "babel es6.js -d dist"
+  },
+  "dependencies": {
+    "browser-sync": "^2.16.0",
+    "gulp": "^3.9.1"
   }
 }

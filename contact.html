@@ -1,0 +1,41 @@
+<h3>Page de contact</h3>
+
+<ul>
+	<li ng-repeat="e in tab">
+		{{ e }}
+		<span ng-click="remove(e)" class="fa fa-times"></span>
+	</li>
+</ul>
+
+<h4>Formulaire</h4>
+<form ng-app="" name="myForm" novalidate="">
+		Description
+		<!-- https://docs.angularjs.org/api/ng/type/form.FormController -->
+		<textarea required class="form-control" pattern="^[a-zA-Z]{10,200}$"  name="myDesc" ng-model="desc"></textarea>
+		<span ng-show="myForm.myDesc.$error.required && (myForm.$submitted || myForm.$pristine) ">Requis...</span>
+			<span ng-show="myForm.myDesc.$error.pattern">Desc trop courte ou trop longue</span>
+
+    Nom:
+    <input class="form-control" type="text" pattern="^[a-zA-Z]{3,20}$"  name="myName" ng-model="name">
+		<!-- email
+		max
+		maxlength
+		min
+		minlength
+		number
+		pattern
+		required
+		url
+		date
+		datetimelocal
+		time
+		week
+		month -->
+    <span ng-show="myForm.myName.$error.pattern">Not a valid name</span>
+
+		Email:
+		<input class="form-control" type="email"  name="myAddress" ng-model="text">
+		<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+
+		<button type="submit" class="btn btn-primary"  name="button">Envoyer ça!!</button>
+</form>

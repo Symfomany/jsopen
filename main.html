@@ -1,0 +1,22 @@
+<div ng-controller="PhoneListController">
+	<ul>
+		<li ng-repeat="(key, message) in data">
+			<h4>{{ message.nom }} - {{ message.prenom }}</h4>
+			<i>{{ message.email }}</p>
+			<a ng-click="removeMess(message)"><i class="fa fa-times"></i></a>
+		</li>
+	</ul>
+
+	<button type="button" class="btn btn-primary" ng-click='add()' name="button">Add</button>
+
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <span>{{phone.username}}</span>
+      <span>{{phone.email}}</span>
+      <!-- <h3>{{ phone.created|ago  }}</h3> -->
+      <!-- <p>{{phone.snippet}}</p> -->
+			<a ng-click="remove(phone)"><i class="fa fa-times"></i></a>
+    </li>
+  </ul>
+</div>
