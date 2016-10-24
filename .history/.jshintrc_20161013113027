@@ -1,0 +1,7 @@
+{
+  "strict": true,
+  "es5"           : true, 
+  "es6"           : true, 
+  "esversion"     : 6, 
+  "node"          : true,
+}

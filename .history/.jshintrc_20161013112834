@@ -1,0 +1,9 @@
+{
+  "undef": true,
+  "strict": true,
+  "es5"           : true, 
+  "es6"           : true, 
+  "node"          : true,
+  "unused": true,
+  "predef": [ "MY_GLOBAL" ]
+}
